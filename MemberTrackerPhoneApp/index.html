@@ -1,13 +1,31 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
     <head>
         <title></title>
+        <meta charset="utf-8" />
+        <script src="cordova.js"></script>
+        <script src="kendo/js/jquery.min.js"></script>
+        <script src="kendo/js/kendo.mobile.min.js"></script>
+        
+        <script src="scripts/App.js"></script>
+       
+        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+        <link href="styles/main.css" rel="stylesheet" />
     </head>
     <body>
-         Landing Page
+        
+        <div data-role="view" id="tabstrip-home" data-title="Hello World!">
+            <h1>Splash!</h1>
+            <p>
+                Hello there. You will be redirected in 3 seconds.                
+                <a href="home.html" >Home</a>
+            </p>
+        </div>
+
         <script>
-            window.location = 'home.html';
+            var app = new kendo.mobile.Application(document.body, { transition: "slide" });
+            $(function() {setTimeout(function(){window.location = config.splashPage;},config.splashDelayInMilliseconds);});
+                        
         </script>
     </body>
 </html>

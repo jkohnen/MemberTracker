@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<script src="cordova.js"></script>
+		<script src="kendo/js/jquery.min.js"></script>
+		<script src="kendo/js/kendo.mobile.min.js"></script>
+		<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+		
+        <script src="scripts/App.js"></script>
+        <script src="scripts/MemberList.js"></script>
+
+		<link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+		<link href="styles/main.css" rel="stylesheet" />
+        <style>
+		#member-drinks
+		{
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			text-align: center;
+			height:48px;
+			
+		}
+
+		#member-drinks li
+		{
+			float:left;
+			width:48px;
+			height:48px;
+			background:url("images/Beer_Icons_Sprite_48px.png")
+		}
+				
+		#member-drinks li.emptybeer
+		{
+			background-position: -48px 0px;
+		}
+		
+		#member-drinks li.fullbeer
+		{
+			background-position: 0px 0px;
+		}
+		
+		#members-card
+		{
+			padding:5px;
+		}
+	</style>
+	</head>
+	<body>
+        <div data-role="view" data-init="mobileListViewDataBindInitGrouped" id="member-list" data-title="Members">
+            <ul id="ul-members" data-role="listview" data-style="inset"></ul>
+        </div>
+		<div data-role="view" id="member-stats">
+			<div data-role="header">
+				<div data-role="navbar">
+					<span>Membership Card</span>
+					<a data-role="button" data-align="right" href="#member-list">Back</a>
+				</div>
+			</div>
+			<div id="members-card" >
+				<header data-role="header">
+					<h4>Justin Kohnen</h4>
+				</header>
+				<div data-role="content">
+					<ul id="member-drinks">
+						<li class="emptybeer"></li>
+						<li class="emptybeer"></li>
+						<li class="emptybeer"></li>
+						<li class="emptybeer"></li>
+						<li class="fullbeer"></li>
+						<li class="fullbeer"></li>
+						<li class="fullbeer"></li>
+						<li class="fullbeer"></li>
+						<li class="fullbeer"></li>
+						<li class="fullbeer"></li>
+					</ul>
+					<p>Member Since 6/15/2012</p>
+				</div>
+			</div>
+		</div>
+        <!--
+		<div data-role="layout" data-id="overview-layout">
+			<footer data-role="footer">
+				<div data-role="tabstrip">
+					<a data-icon="globe" href="#overview-home">Home</a>
+					<a data-icon="globe" href="#member-list">Members</a>
+					<a data-icon="organize" href="#overview-page2">Page Two</a>
+				</div>
+			</footer>
+		</div>
+        -->
+
+		<script  type="text/javascript">
+			window.kendoMobileApplication = new kendo.mobile.Application(document.body, { transition: "slide" });
+		</script>
+	</body>
+</html>
